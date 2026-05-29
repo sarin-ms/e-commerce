@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import productSchema from "../models/products.js";
 
 export const connectDB = async () => {
   if(mongoose.connection.readyState >= 1) {
@@ -10,4 +11,4 @@ export const connectDB = async () => {
 
 };
 
-export default mongoose.models.Product || mongoose.model("Product", productSchema);
+export default connectDB;
